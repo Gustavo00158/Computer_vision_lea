@@ -6,4 +6,4 @@ path_file = "video/beam.avi"
 
 Video = Video(path_file) #aqui vamos passar o valor da variavel pro outro arquivo 
 
-Video.upload_video_3D_4_2D() #aqui a função so abre o video 
+vetor_flatten_2d = Video.upload_video_3D_4_2D() #aqui a função so abre o video 
