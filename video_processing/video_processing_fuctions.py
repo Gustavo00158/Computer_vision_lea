@@ -10,7 +10,11 @@ class Video:
         self.height = None
         self.width = None
         self.frames_gray = None 
-
+        self.video_vetor_2D = None
+        
+        
+        
+        
     def upload_video_3D_4_2D(self):
         cap = cv2.VideoCapture(self.video)
         self.frames_gray = []
@@ -30,13 +34,15 @@ class Video:
         # Verifica se há frames carregados
         if len(self.frames_gray) > 0:
             self.height, self.width = self.frames_gray[0].shape  #
-            print('Shape do vídeo: ({}, {}, {})'.format(len(self.frames_gray), self.height, self.width))
-        
+            print('Shape do vídeo: Height, width= ({},{})'.format(self.height, self.width))
         self.video_vetor = np.array(self.frames_gray)
+        print("lenth vetor_frame_2d: shape {}".format(self.video_vetor.shape))
+        self.video_vetor_2D = self.video_vetor.reshape(self.height * self.width, -1)
+        
+        print('flattening vector video{}'.format(self.video_vetor_2D.shape))
 
-        return self.video_vetor
+        return self.video_vetor_2D
 
-    '''       print('flattening vector video')
-        self.video_vetor = '''
+
         
         
